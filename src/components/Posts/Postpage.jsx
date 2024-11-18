@@ -11,13 +11,6 @@ export default function PostPage (){
     const dayMonthYear = dateTime.getDay()+"/"+dateTime.getDate()+"/"+dateTime.getFullYear();
     const time = dateTime.getHours()+":"+dateTime.getMinutes()
     const thisAuthor = users.filter((user)=>user.id == thisPost.userId)[0];
-    const navigate = useNavigate()
-
-    if(typeof token == "object"){
-        return (
-            <Login></Login>
-        )
-    }
     return (
         <div className="postpage">
             <div className="post">

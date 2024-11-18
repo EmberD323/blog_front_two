@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useParams,useOutletContext,useNavigate } from "react-router-dom";
 import Errors from "../Partials/Errors"
+import Login from '../Users/Login.jsx';
 
 export default function NewComment (){
     const [posts,setPosts,token,setToken,edit,setEdit,users,setUsers] = useOutletContext();
@@ -34,6 +35,15 @@ export default function NewComment (){
     }
     function handleTextChange(e){
         setText(e.target.value)
+    }
+    if(typeof token == "object"){
+        return (
+            <>
+                <div>Log in to comment</div>
+                <Login></Login>
+            </>
+            
+        )
     }
     return (
         <div className="formContainer">
